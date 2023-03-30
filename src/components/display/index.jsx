@@ -1,4 +1,4 @@
-import mainImg from "../../assets/mainImg.jpg";
+import mainImg from "../../assets/mainImg.png";
 
 export const Display = () => {
 
