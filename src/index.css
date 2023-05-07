@@ -1,30 +1,103 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Amatic SC', cursive;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgb(117, 72, 127);
+  /* color: #343434; */
+  color: rgb(255, 255, 255);
   align-items: center;
+  /* background-image: "backGroundImg.jpg"; */
 }
-
+/* 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; */
+/* }  */
+DrawerList a {
+  font-family: 'Amatic SC', cursive;
 }
-
 .mainPage{
-  text-align: center;  
+  text-align: center;
+  width:auto;
+  height: 100%;
+
+  background: url("./assets/backGroundImg.jpg") 100% 100% no-repeat;
+  background-size: cover;
 }
 
+.savingChoice{
+  text-align: center;
+  width:auto;
+  height: 100%;
+
+  background: url("./assets/backGroundImg.jpg") 100% 100% no-repeat;
+  background-size: cover;
+}
+
+.choiceBlock{
+  padding-bottom: 61px;
+}
+.choiceBlock h2{
+  padding-top: 150px;
+}
 DrawerList {
-  text-align: center;  
+  text-align: center;
 }
 
-StertNewGame{
+/* StertNewGame{
   padding: 10px;
+} */
+
+h1{
+  margin: 0;
+  padding-top: 100px;
+  font-weight: normal;
+}
+h2{
+  padding-top: 100px;
+  font-weight: normal;
+}
+p{
+  padding-bottom: 100px;
+  height: 200px;
 }
 
-/* .mainButton{
-  width: auto;
+.intro{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width:auto;
+  /* height: 100%; */
+  height: 715px; 
+  background: url("./assets/intro.jpg") 100% 100% no-repeat;
+  background-size: cover;
+}
+
+.forest{
+  width:auto;
+  /* height: 100%; */
+  height: 715px; 
+  background: url("./assets/forest.jpg") 100% 100% no-repeat;
+  background-size: cover;
+}
+
+.map{
+  width:auto;
+  /* height: 100%; */
+  height: 715px; 
+  background: url("./assets/mapImg.jpg");
+  background-size: cover;
+}
+
+/* .move {
+  animation: move-animation 0.5s ease-in-out;
 } */
+
+/* @keyframes move-animation {
+  0% {
+    left: prevZ;
+  }
+  100% {
+    left: z;
+  } */
+/* } */
