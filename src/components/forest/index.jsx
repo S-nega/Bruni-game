@@ -8,74 +8,46 @@ import userEvent from "@testing-library/user-event";
 import { useEffect } from "react";
 import {useCanvas} from "../useCanvas";
 import {Map} from "../map";
-import {MovingObject} from "../movingObject"; 
+import {MovingObject, Object} from "../movingObject"; 
 
+import bruni from "../../assets/bruni.png";
 import grass from "../../assets/grass1.png";
 import pen from "../../assets/pen.png";
 import pen2 from "../../assets/pen2.png";
 import brevno1 from "../../assets/brevno1.png";
 import brevno2 from "../../assets/brevno2.png";
 
-// import mainImg from "../../assets/mainImg.png";
 
-export const Forest = (containerPosition) => {
-  // useMechanic();
-  const [x, setX] = useState(0);
+export const Forest = () => {
 
-  // document.addEventListener('keydown', function(event){
-  //   // File1.setProgress("/forest");
-    
-  // })
-
-  const handleKeyDown = (event) => {
-    if (event.keyCode === 37 || event.key === "a") { // move left
-        // console.log(x);
-        setX(x => x+40);
-      // if(x >= 0){
-        // console.log("stop");
-        // console.log(x+40);
-      // } else{
-        // console.log(x+40);
-      // }
-    } else if (event.keyCode === 39 || event.key === "d") { // move right
-      setX(x => x-40);
-    }
-  };
+  const [objectX, objectZ, containerX] = MovingObject();
 
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
-    if(x > 0){
-      setX(0);
-    }
-    if(x < -900){
-      setX(-900);
-    }
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [x]);
+    
+  }, [containerX]);
 
   return (
     <div className="screen">
     <div className="forest" 
       style={{
         position: "absolute",
-        // marginLeft: x,
-        transform:`translate(${x}px)`,
+        transform:`translate(${containerX}px)`,
       }}
     >
-      ${x}
-      {/* <div className="container" */}
-      {/* style={{ transform: `translate(${containerPosition}px` }} */}
-      {/* > */}
-    {/* <h1>Forest</h1> */}
-    {/* {useCanvas()} */}
-
-    {/* <useCanvas/> */}
-    {/* useCanvas() */}
     {/* <img src={forest} alt={"forest"} style={{ width: "100%" , height: "715px", position: "relative"}} /> */}
-    {/* <Person /> */}
-      <MovingObject/>
+      
+    <div className="move"
+      style={{
+        position: "absolute",
+        left: objectX,
+        top: objectZ,
+        transition: 'left 1s, top 1s',
+      }}>
+        <img src={bruni} alt={"bruni"} style={{ width: "110px" , height: "110pxpx"}} />
+    </div>
+    
+      {/* <MovingObject/> */}
+      {/* <Object/> */}
       <img src={grass} alt={"grass"} style={{ 
         position: "absolute",
         left: "1px",
@@ -87,22 +59,19 @@ export const Forest = (containerPosition) => {
       <img src={brevno1} alt={"brevno"} style={{
         position: "absolute",
         width: "280px",
-        left: "1000px",
+        left: "980px",
         top: "475px"
       }}
       />
       <div className="block" 
         style={{
           position: "absolute",
-          left: "1050px",
+          left: "1030px",
           top: "490px",
           width: "190px",
           height: "200px",
+          // backgroundColor: "red"
         }}
-        // script={{
-
-        // }}
-
       />
 
       {/* <img src={pen} alt={"pen'"} style={{
@@ -126,62 +95,7 @@ export const Forest = (containerPosition) => {
         top: "517px",
       }}
       /> */}
-
-      {/* <div className="grass" style={{
-        position: "absolute",
-        left: 0,
-        top: "10px",
-        backgroundImage: "url(../../assets/grass.png)", 
-        // backgroundColor: "#6B8E23",
-        width: "2400px",
-        height: "203px",
-        // borderRadius: "5px",
-        // borderTop: "20px",
-        // borderColor: "#228B22",
-      }} */}
-      {/* ></div> */}
-      {/* <div style={{
-        position: "absolute",
-        left: "0",
-        top: "610px",
-        backgroundColor: "#228B22",
-        width: "1104px",
-        height: "30px",
-        borderRadius: "5px",
-        // borderTop: "20px",
-        // borderColor: "#228B22",
-      }}
-      ></div> */}
-{/* 
-      <div style={{
-        position: "absolute",
-        left: "1200px",
-        top: "510px",
-        backgroundColor: "#6B8E23",
-        width: "100px",
-        height: "80px",
-        borderRadius: "5px",
-        // borderTop: "20px",
-        // borderColor: "#228B22",
-      }}
-      ></div>
-      <div style={{
-        position: "absolute",
-        left: "1198px",
-        top: "510px",
-        backgroundColor: "#228B22",
-        width: "104px",
-        height: "30px",
-        borderRadius: "5px",
-        // borderTop: "20px",
-        // borderColor: "#228B22",
-      }}
-      ></div> */}
        {/* <img src={mainImg} alt={"mainImg"} style={{ width: "100%" }} /> */}
-      
-      {/* <div width="230px" hiegth="200px">
-          Press Any Key
-      </div>  */}
       </div>
      </div> 
   );
