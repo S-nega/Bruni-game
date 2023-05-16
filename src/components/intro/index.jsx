@@ -24,9 +24,6 @@ export const Intro = (props) => {
 
       {/* <img src={intro} alt={"intro"} style={{ width: "100%" , height: "715px", position: "relative", marginBottom: "0"}} /> */}
       <p style={{position: "absolute", right: "50px", bottom: "30px", paddingBottom: "0px", height: "10px" }}>Press Any Key to skip</p>
-
-      {/* сделать картинку бэкгрундом */}
-      {}
     </div> 
   );
 };

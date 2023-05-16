@@ -17,6 +17,7 @@ code {
 DrawerList a {
   font-family: 'Amatic SC', cursive;
 }
+
 .mainPage{
   text-align: center;
   width:auto;
@@ -74,11 +75,23 @@ p{
 }
 
 .forest{
-  width:auto;
+  position: absolute;
+  left: 0;
+  width:2400px;
   /* height: 100%; */
   height: 715px; 
-  background: url("./assets/forest.jpg") 100% 100% no-repeat;
+  background: url("./assets/forest.png") 100% 100% no-repeat;
   background-size: cover;
+  transition: transform 0.5s ease-out;
+}
+.forest .grass{
+  background: url("./assets/grass.png") 100% 100% no-repeat;
+}
+
+.container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .map{
@@ -89,6 +102,11 @@ p{
   background-size: cover;
 }
 
+/* .screen{
+  &::-webkit-scrollbar {
+    display: none;
+  }
+} */
 /* .move {
   animation: move-animation 0.5s ease-in-out;
 } */
@@ -101,3 +119,8 @@ p{
     left: z;
   } */
 /* } */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
