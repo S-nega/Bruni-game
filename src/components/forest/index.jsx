@@ -1,13 +1,6 @@
 import { useState } from 'react';
 
-import { GameLogic } from "../gameLogic";
-import { File1 } from "../file1";
-import { useMechanic } from "../useMechanic";
-import {Person} from "../person";
-import userEvent from "@testing-library/user-event";
 import { useEffect } from "react";
-import {useCanvas} from "../useCanvas";
-import {Map} from "../map";
 import {MovingObject, Object} from "../movingObject"; 
 
 import bruni from "../../assets/bruni.png";

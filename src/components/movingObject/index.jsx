@@ -3,23 +3,7 @@ import { GameLoop, Sprite } from "react-game-kit";
 import bruni from "../../assets/bruni.png";
 
 
-// const Object = (x, z) => {
-//   return(
-//     <div className="move"
-//     style={{
-//       position: "absolute",
-//       left: x,
-//       top: z,
-//       transition: 'left 1s, top 1s',
-//     }}>
-//       <img src={bruni} alt={"bruni"} style={{ width: "110px" , height: "110pxpx"}} />
-//       {x}
-//   </div>
-//   );
-// };
-
 function MovingObject() {
-  // const [Object, setObject] = useState({ x: 100, y: 100 });
   const [objectX, setObjectX] = useState(600);
   const [objectZ, setObjectZ] = useState(500);
   const [containerX, setContainerX] = useState(0);
