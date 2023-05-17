@@ -70,7 +70,7 @@ export const Forest = () => {
           top: "490px",
           width: "190px",
           height: "200px",
-          // backgroundColor: "red"
+          backgroundColor: "red"
         }}
       />
 
