@@ -25,6 +25,9 @@ export const Intro = (props) => {
       {/* </div> */}
 
       {/* <img src={intro} alt={"intro"} style={{ width: "100%" , height: "715px", position: "relative", marginBottom: "0"}} /> */}
+      <br/>
+      <p style={{position: "relative", margin: "auto", marginTop: "50px", textAlign: "center", paddingBottom: "5px", width: "1000px", height: "auto", padding: "5px", backgroundColor: "black",  opacity: "0.4", zIndex: "999", borderRadius: "10px"}}>Story</p>
+
       <p style={{position: "absolute", right: "50px", bottom: "30px", paddingBottom: "0px", height: "10px" }}>Press Any Key to skip</p>
     </div> 
   );

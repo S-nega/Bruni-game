@@ -65,58 +65,59 @@ function MovingObject(file) {
       // console.log(blocksArray[i].width);
       // console.log(objectZ);
       // console.log(objectX);//1180
-
-      if (objectX+120 >= blocksArray[i].left && objectX <= blocksArray[i].left+blocksArray[i].width+40 && objectZ <= blocksArray[i].top && objectZ > blocksArray[i].top-145){//проверка на высоту
-        setBlockTop(blocksArray[i].top);
-        if(objectX+120 >= blocksArray[i].left && objectX < blocksArray[i].left){//препятствие справа
-          // setBlockRight(blocksArray[i]);
-          setBlockRight(
-            {
-              key: blocksArray[i].key,
-              left: blocksArray[i].left,
-              top: blocksArray[i].top,
-              width: blocksArray[i].width,
-              height: blocksArray[i].height,
-              action: blocksArray[i].action,
-            });
-          result = "right";
-          // console.log('right collision');
+      if(blocksArray[i].location === mapName){  
+        if (objectX+120 >= blocksArray[i].left && objectX <= blocksArray[i].left+blocksArray[i].width+40 && objectZ <= blocksArray[i].top && objectZ > blocksArray[i].top-145){//проверка на высоту
+          setBlockTop(blocksArray[i].top);
+          if(objectX+120 >= blocksArray[i].left && objectX < blocksArray[i].left){//препятствие справа
+            // setBlockRight(blocksArray[i]);
+            setBlockRight(
+              {
+                key: blocksArray[i].key,
+                left: blocksArray[i].left,
+                top: blocksArray[i].top,
+                width: blocksArray[i].width,
+                height: blocksArray[i].height,
+                action: blocksArray[i].action,
+              });
+            result = "right";
+            // console.log('right collision');
+          }
+          else if(objectX >= blocksArray[i].left+blocksArray[i].width && objectX <= blocksArray[i].left+blocksArray[i].width+40){//препятствие слева 
+            // setBlockLeft(blocksArray[i]);
+            setBlockLeft(
+              {
+                key: blocksArray[i].key,
+                left: blocksArray[i].left,
+                top: blocksArray[i].top,
+                width: blocksArray[i].width,
+                height: blocksArray[i].height,
+                action: blocksArray[i].action,
+              });
+            result = "left";
+            // console.log('left collision');
+          }
+          break;
         }
-        else if(objectX >= blocksArray[i].left+blocksArray[i].width && objectX <= blocksArray[i].left+blocksArray[i].width+40){//препятствие слева 
-          // setBlockLeft(blocksArray[i]);
-          setBlockLeft(
-            {
-              key: blocksArray[i].key,
-              left: blocksArray[i].left,
-              top: blocksArray[i].top,
-              width: blocksArray[i].width,
-              height: blocksArray[i].height,
-              action: blocksArray[i].action,
-            });
-          result = "left";
-          // console.log('left collision');
+        else if((objectX+40 >= blocksArray[i].left+blocksArray[i].width || objectX+30 < blocksArray[i].left) && objectZ <= blocksArray[i].top-145){ // падение
+          setObjectZ(500);
+          if(objectX+40 >= blocksArray[i].left+blocksArray[i].width){
+            setObjectX(objectX => objectX+40);
+          } 
+          if(objectX+30 < blocksArray[i].left){
+            setObjectX(objectX => objectX-40);
+          } 
+          // console.log('fall');
+          break;
         }
-        break;
-      }
-      else if((objectX+40 >= blocksArray[i].left+blocksArray[i].width || objectX+30 < blocksArray[i].left) && objectZ <= blocksArray[i].top-145){ // падение
-        setObjectZ(500);
-        if(objectX+40 >= blocksArray[i].left+blocksArray[i].width){
-          setObjectX(objectX => objectX+40);
-        } 
-        if(objectX+30 < blocksArray[i].left){
-          setObjectX(objectX => objectX-40);
-        } 
-        // console.log('fall');
-        break;
-      }
-      else if (objectZ <= blocksArray[i].top && objectX+120 >= blocksArray[i].left && objectX <= blocksArray[i].left+blocksArray[i].width+40){
-        // console.log("no collision");
-        result="null";
-        break;
-      }
-      else if (objectZ <= blocksArray[i].top){
-        // console.log("no collision");
-        result="null";
+        else if (objectZ <= blocksArray[i].top && objectX+120 >= blocksArray[i].left && objectX <= blocksArray[i].left+blocksArray[i].width+40){
+          // console.log("no collision");
+          result="null";
+          break;
+        }
+        else if (objectZ <= blocksArray[i].top){
+          // console.log("no collision");
+          result="null";
+        }
       }
     }
     return (result);
@@ -285,7 +286,7 @@ function MovingObject(file) {
       setContainerX(-900);
     }
 
-    if(objectX >= 2200){
+    if(objectX >= 2300){
       let currentBlock = window.location.href.split('/').pop();
       setCurrentGameBlock(currentBlock);
       let id = 0;

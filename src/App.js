@@ -4,6 +4,7 @@ import { Intro } from "./components/intro";
 import { File1 } from "./components/file1";
 import { Forest } from "./components/forest";
 import { Forest2 } from "./components/forest2";
+import { Cave } from "./components/cave";
 import { SavingChoice } from "./components/savingChoice";
 import { Map } from "./components/map";
 import { MovingObject } from "./components/movingObject";
@@ -75,6 +76,12 @@ function App() {
           path="/forest2"
           element={
               <Forest2 />
+          }
+        />
+        <Route
+          path="/cave"
+          element={
+              <Cave />
           }
         />
         <Route

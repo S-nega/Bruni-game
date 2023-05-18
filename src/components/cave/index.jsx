@@ -2,14 +2,14 @@ import { useEffect } from "react";
 import {MovingObject, Object} from "../movingObject"; 
 
 import bruni from "../../assets/bruni.png";
-import grass22 from "../../assets/grass22.png";
+import grass3 from "../../assets/grass3.png";
 import pen from "../../assets/pen.png";
 import pen2 from "../../assets/pen2.png";
 import brevno1 from "../../assets/brevno1.png";
 import brevno2 from "../../assets/brevno22.png";
 
 
-export const Forest2 = () => {
+export const Cave = () => {
 
   const [objectX, objectZ, containerX, isAnimating] = MovingObject();
 
@@ -19,7 +19,7 @@ export const Forest2 = () => {
 
   return (
     <div className="screen">
-    <div className="forest2" 
+    <div className="cave" 
       style={{
         position: "absolute",
         transform:`translate(${containerX}px)`,
@@ -48,10 +48,10 @@ export const Forest2 = () => {
     
       {/* <MovingObject/> */}
       {/* <Object/> */}
-      <img src={grass22} alt={"grass"} style={{ 
+      <img src={grass3} alt={"grass"} style={{ 
         position: "absolute",
-        left: "-25",
-        top: "352px",
+        left: "1px",
+        top: "460px",
         width: "2400px",
         zIndex: "999",
         }} 
