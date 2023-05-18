@@ -1,6 +1,13 @@
 import { useState } from 'react';
 
+import { GameLogic } from "../gameLogic";
+import { File1 } from "../file1";
+import { useMechanic } from "../useMechanic";
+import {Person} from "../person";
+import userEvent from "@testing-library/user-event";
 import { useEffect } from "react";
+import {useCanvas} from "../useCanvas";
+import {Map} from "../map";
 import {MovingObject, Object} from "../movingObject"; 
 
 import bruni from "../../assets/bruni.png";
@@ -60,10 +67,10 @@ export const Forest = () => {
         style={{
           position: "absolute",
           left: "1030px",
-          top: "490px",
+          top: "500px",
           width: "190px",
           height: "200px",
-          backgroundColor: "red"
+          // backgroundColor: "red"
         }}
       />
 
