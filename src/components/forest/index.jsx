@@ -74,12 +74,22 @@ export const Forest = () => {
         }}
       />
 
-      {/* <img src={pen} alt={"pen'"} style={{
+      <img src={pen} alt={"pen'"} style={{
         position: "absolute",
         // width: "280px",
         left: "1900px",
         top: "475px",
       }}
+      />
+      <div className="block" 
+        style={{
+          position: "absolute",
+          left: "1955px",
+          top: "125px",
+          width: "180px",
+          height: "500px",
+          // backgroundColor: "red"
+        }}
       />
       <img src={brevno2} alt={"brevno"} style={{
         position: "absolute",
@@ -94,7 +104,7 @@ export const Forest = () => {
         left: "1906px",
         top: "517px",
       }}
-      /> */}
+      />
        {/* <img src={mainImg} alt={"mainImg"} style={{ width: "100%" }} /> */}
       </div>
      </div> 
