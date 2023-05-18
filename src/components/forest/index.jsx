@@ -11,7 +11,7 @@ import brevno2 from "../../assets/brevno22.png";
 
 export const Forest = () => {
 
-  const [objectX, objectZ, containerX, isAnimating, map] = MovingObject();
+  const [objectX, objectZ, containerX, isAnimating] = MovingObject();
 
   useEffect(() => {
     
