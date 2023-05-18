@@ -88,6 +88,13 @@ p{
   background: url("./assets/grass.png") 100% 100% no-repeat;
 }
 
+.brevno2{
+  position: absolute;
+  width: 240px;
+  left: 1940px;
+  top: 125px;
+}
+
 .container{
   position: absolute;
   width: 100%;
@@ -123,4 +130,37 @@ p{
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+@keyframes fallAnimation {
+  0% {
+    top: 125px;
+    left: 1995px;
+    /* transform: skewY(0deg); */
+  }
+  50%{
+
+  }
+  /* 75%{
+    rotate: 75deg;
+    left: 1995px;
+    top:200px;
+  } */
+  100% {
+    top: 163px;
+    left: 1760px;
+    rotate: 90deg;
+    /* transform: skewY(90deg); */
+    /* transform: rotate(45deg); */
+  }
+}
+.animate{
+  animation-name: fallAnimation;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  transform-origin: bottom right;
+}
+.map{
+  display: block;
 }

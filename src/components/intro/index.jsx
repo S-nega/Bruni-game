@@ -6,12 +6,14 @@ import { useState } from "react";
 
 export const Intro = (props) => {
 
+  const fileName = window.location.href.split(',').pop();
   // const [progress, setProgress] = useState(props.progress);
-
+  
   document.addEventListener('keydown', function(event){
     // console.log(`Key: ${event.key} with keycode ${event.keyCode} has been pressed`);
     // setProgress = '/forest';
     // saveBlock('/forest');
+    console.log(fileName);
     window.location.assign('/forest');
   })
 

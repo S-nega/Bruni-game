@@ -9,9 +9,9 @@ import brevno1 from "../../assets/brevno1.png";
 import brevno2 from "../../assets/brevno22.png";
 
 
-export const Forest = () => {
+export const Forest2 = () => {
 
-  const [objectX, objectZ, containerX, isAnimating, map] = MovingObject();
+  const [objectX, objectZ, containerX, isAnimating] = MovingObject();
 
   useEffect(() => {
     
@@ -19,13 +19,6 @@ export const Forest = () => {
 
   return (
     <div className="screen">
-    {/* <div className={map ? 'map' : ''}
-      style={{
-        display: "none",
-      }}
-    >
-      <img src={map} alt={"map"} style={{ width: "100%" , height: "715px", position: "absolute", zIndex: "999"}} />
-    </div> */}
     <div className="forest" 
       style={{
         position: "absolute",
