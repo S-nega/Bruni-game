@@ -1,4 +1,4 @@
-import mapImg from "../../assets/mapImg.jpg";
+import mapImg from "../../assets/mapImg.jpeg";
 import {saveBlock} from "../file1/index.jsx";
 import { useState } from "react";
 // import { useHistory } from "react-router-dom";

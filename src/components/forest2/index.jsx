@@ -3,10 +3,7 @@ import {MovingObject, Object} from "../movingObject";
 
 import bruni from "../../assets/bruni.png";
 import grass22 from "../../assets/grass22.png";
-import pen from "../../assets/pen.png";
-import pen2 from "../../assets/pen2.png";
-import brevno1 from "../../assets/brevno1.png";
-import brevno2 from "../../assets/brevno22.png";
+import rock from "../../assets/rock.png";
 
 
 export const Forest2 = () => {
@@ -25,16 +22,14 @@ export const Forest2 = () => {
         transform:`translate(${containerX}px)`,
       }}
     >
-    {/* <img src={forest} alt={"forest"} style={{ width: "100%" , height: "715px", position: "relative"}} /> */}
-    
-   
-    <img src={pen} alt={"pen'"} style={{
-      position: "absolute",
-      // width: "280px",
-      left: "1900px",
-      top: "475px",
-    }}
-    />
+      <img src={rock} alt={"rock"} style={{
+          position: "absolute",
+          width: "280px",
+          left: "980px",
+          top: "475px"
+        }}
+      />
+
 
     <div className="move"
       style={{
@@ -46,8 +41,6 @@ export const Forest2 = () => {
         <img src={bruni} alt={"bruni"} style={{ width: "110px" , height: "110pxpx"}} />
     </div>
     
-      {/* <MovingObject/> */}
-      {/* <Object/> */}
       <img src={grass22} alt={"grass"} style={{ 
         position: "absolute",
         left: "-25",
@@ -57,29 +50,7 @@ export const Forest2 = () => {
         }} 
       />
 
-      {/* <img src={brevno1} alt={"brevno"} style={{
-        position: "absolute",
-        width: "280px",
-        left: "980px",
-        top: "475px"
-      }}
-      /> */}
-      
-      
-      
-      
-      {/* <div className="block" 
-        style={{
-          position: "absolute",
-          left: "1955px",
-          top: "125px",
-          width: "180px",
-          height: "500px",
-          // backgroundColor: "red"
-        }}
-      /> */}
-      
-      <img src={brevno2} alt={"brevno"} className={isAnimating ? 'animate' : ''} style={{
+      {/* <img src={brevno2} alt={"brevno"} className={isAnimating ? 'animate' : ''} style={{
         position: "absolute",
         width: "340px",
         left: "1865px",
@@ -92,8 +63,7 @@ export const Forest2 = () => {
         left: "1906px",
         top: "517px",
       }}
-      />
-       {/* <img src={mainImg} alt={"mainImg"} style={{ width: "100%" }} /> */}
+      /> */}
       </div>
      </div> 
   );

@@ -60,16 +60,10 @@ function MovingObject(file) {
     setBlockLeft(null);
     setBlockRight(null);
     for (let i=0; i < blocksArray.length; i++){
-      // console.log(blocksArray[i].top-145);
-      // console.log(blocksArray[i].left);//1030+150=1180
-      // console.log(blocksArray[i].width);
-      // console.log(objectZ);
-      // console.log(objectX);//1180
       if(blocksArray[i].location === mapName){  
         if (objectX+120 >= blocksArray[i].left && objectX <= blocksArray[i].left+blocksArray[i].width+40 && objectZ <= blocksArray[i].top && objectZ > blocksArray[i].top-145){//проверка на высоту
           setBlockTop(blocksArray[i].top);
           if(objectX+120 >= blocksArray[i].left && objectX < blocksArray[i].left){//препятствие справа
-            // setBlockRight(blocksArray[i]);
             setBlockRight(
               {
                 key: blocksArray[i].key,
@@ -80,10 +74,8 @@ function MovingObject(file) {
                 action: blocksArray[i].action,
               });
             result = "right";
-            // console.log('right collision');
           }
           else if(objectX >= blocksArray[i].left+blocksArray[i].width && objectX <= blocksArray[i].left+blocksArray[i].width+40){//препятствие слева 
-            // setBlockLeft(blocksArray[i]);
             setBlockLeft(
               {
                 key: blocksArray[i].key,
@@ -94,7 +86,6 @@ function MovingObject(file) {
                 action: blocksArray[i].action,
               });
             result = "left";
-            // console.log('left collision');
           }
           break;
         }
@@ -106,16 +97,13 @@ function MovingObject(file) {
           if(objectX+30 < blocksArray[i].left){
             setObjectX(objectX => objectX-40);
           } 
-          // console.log('fall');
           break;
         }
         else if (objectZ <= blocksArray[i].top && objectX+120 >= blocksArray[i].left && objectX <= blocksArray[i].left+blocksArray[i].width+40){
-          // console.log("no collision");
           result="null";
           break;
         }
         else if (objectZ <= blocksArray[i].top){
-          // console.log("no collision");
           result="null";
         }
       }
@@ -143,93 +131,39 @@ function MovingObject(file) {
       }
     }
     if (event.keyCode === 39 || event.key === "d") { // move right
-      // console.log(checkCollision());
       if(checkCollision() === "right" || checkCollision() === "block"){
-        // console.log('stop');
         setObjectX(objectX);
       }
       else{
-        // console.log('right');
         setObjectX(objectX => objectX+40);
-        // console.log(objectX);
         setContainerX(containerX => containerX-40);
       }
     }
 
     if (event.keyCode === 32) { //jump
-      // setObjectZ(objectZ => objectZ-60);
-      // checkActivity(blockRight);
-      // checkActivity(blockLeft);
-      // if(!checkActivity(blockRight) && !checkActivity(blockLeft)){
         if (checkCollision() === "right"){
-          // console.log("hang");
           setObjectX(objectX => objectX+60);
           setObjectZ(objectZ => blockTop-145);
-          // console.log(blockTop);
-          // console.log(objectZ);
         }
         else if(checkCollision() === "left"){
-          // console.log("hang");
           setObjectX(objectX => objectX-60);
           setObjectZ(blockTop-145);
         }
-        // else{
-        //   setTimeout(() => {
-        //     setObjectZ(objectZ => objectZ+60);
-        //   }, 400);
-        // }
-      // }
     } 
 
     if (event.key === "e"){ //action
       if(checkCollision()){
         if(checkActivity(blockRight)){
           setIsAnimating(true);
-          // let width = 500;
-          // let top = 530;
-          // let rotate = 90;
-          // console.log("animation");
-          // blockRight.action = false;
         }
         else if(checkActivity(blockLeft)){
           setIsAnimating(true);
-          // let width = 500;
-          // let top = 530;
-          // let rotate = 90;
-          // console.log("animation");
-          // blockLeft.action = false;
         }
       }
     } 
     if(event.key === "m"){
-      // setMap(true);
       window.location.assign('/map'); //сделать просто картинку по верх всего
     }
-
-    // if(event.key === "f" && objectX >= 2200){ //переход на следующий уровень
-      // for(let i=0; i<gameBlocks.length; i++){
-      //   if(gameBlocks === currentGameBlock){
-      //     setCurrentGameBlock(gameBlocks[i+1]);
-      //     window.location.assign(gameBlocks[i+1]); 
-      //     break;
-      //   }
-      // }
-      // window.location.assign(gameBlocks[1].name); 
-    // }
-  // };
-
-  // const handleAction = () => {
-    
-    // blocksArray[2](
-    //   {
-    //     key:3,
-    //     left: 1955,
-    //     top: 530,
-    //     width: 600,
-    //     height: 100,
-    //     action: false,
-    //   }
-    // );
   };
 
 
@@ -237,7 +171,6 @@ function MovingObject(file) {
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     setObjectZ(objectZ);
-    // console.log(objectZ);
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
@@ -247,8 +180,6 @@ function MovingObject(file) {
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
-    // console.log(objectZ);
-    // console.log(blockTop);
     checkCollision();
 
     return () => {
@@ -259,8 +190,6 @@ function MovingObject(file) {
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
-    // console.log(objectZ);
-    // console.log(mapName);
     setObjectX(objectX);
     setObjectZ(objectZ);
 
@@ -290,7 +219,6 @@ function MovingObject(file) {
       let currentBlock = window.location.href.split('/').pop();
       setCurrentGameBlock(currentBlock);
       let id = 0;
-      // console.log(currentBlock);
       for (let i=0; i<gameBlocks.length; i++){
         if (currentBlock === gameBlocks[i].name){
           id = i+1;
@@ -302,7 +230,6 @@ function MovingObject(file) {
       let currentBlock = window.location.href.split('/').pop();
       setCurrentGameBlock(currentBlock);
       let id = 1;
-      // console.log(currentBlock);
       for (let i=0; i<gameBlocks.length; i++){
         if (currentBlock === gameBlocks[i].name && gameBlocks[i].name !== "forest"){
           id = i-1;
@@ -316,18 +243,6 @@ function MovingObject(file) {
   }, [objectX]);
 
   return [objectX, objectZ, containerX, isAnimating, currentGameBlock];
-  // return(
-  //   <div className="move"
-  //   style={{
-  //     position: "absolute",
-  //     left: objectX,
-  //     top: objectZ,
-  //     transition: 'left 1s, top 1s',
-  //   }}>
-  //     <img src={bruni} alt={"bruni"} style={{ width: "110px" , height: "110pxpx"}} />
-  //     {x}
-  // </div>
-  // );
 }
 
 export {MovingObject};

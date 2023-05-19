@@ -48,12 +48,6 @@ function App() {
             <SavingChoice/>
           }
         />
-        {/* <Route
-        path="/startNewGame"
-        element={
-          <StartNewGame/>
-        }
-        /> */}
         <Route
           path="/movingObject"
           element={
