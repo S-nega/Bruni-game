@@ -189,5 +189,5 @@ p{
   transform-origin: bottom right;
 }
 .map{
-  display: block;
+  /* display: block; */
 }

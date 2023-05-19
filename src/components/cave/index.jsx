@@ -28,13 +28,13 @@ export const Cave = () => {
     {/* <img src={forest} alt={"forest"} style={{ width: "100%" , height: "715px", position: "relative"}} /> */}
     
    
-    <img src={pen} alt={"pen'"} style={{
+    {/* <img src={pen} alt={"pen'"} style={{
       position: "absolute",
       // width: "280px",
       left: "1900px",
       top: "475px",
     }}
-    />
+    /> */}
 
     <div className="move"
       style={{
@@ -78,7 +78,7 @@ export const Cave = () => {
           // backgroundColor: "red"
         }}
       /> */}
-      
+{/*       
       <img src={brevno2} alt={"brevno"} className={isAnimating ? 'animate' : ''} style={{
         position: "absolute",
         width: "340px",
@@ -92,7 +92,7 @@ export const Cave = () => {
         left: "1906px",
         top: "517px",
       }}
-      />
+      /> */}
        {/* <img src={mainImg} alt={"mainImg"} style={{ width: "100%" }} /> */}
       </div>
      </div> 
